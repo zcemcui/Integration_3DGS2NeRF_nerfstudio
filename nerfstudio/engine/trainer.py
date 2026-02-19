@@ -501,7 +501,11 @@ class Trainer:
         with torch.autocast(device_type=cpu_or_cuda_str, enabled=self.mixed_precision):
             _, loss_dict, metrics_dict = self.pipeline.get_train_loss_dict(step=step)
             loss = functools.reduce(torch.add, loss_dict.values())
+
+        # (!!!) 调试代码已被删除 (!!!)
+        
         self.grad_scaler.scale(loss).backward()  # type: ignore
+        
         needs_step = [
             group
             for group in self.optimizers.parameters.keys()
@@ -528,7 +532,7 @@ class Trainer:
 
         # Merging loss and metrics dict into a single output.
         return loss, loss_dict, metrics_dict  # type: ignore
-
+        
     @check_eval_enabled
     @profiler.time_function
     def eval_iteration(self, step: int) -> None:

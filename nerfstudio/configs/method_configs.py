@@ -23,6 +23,8 @@ from typing import Dict, Union
 
 import tyro
 
+from nerfstudio.configs.gs_distill import gs_distill_method
+
 from nerfstudio.cameras.camera_optimizers import CameraOptimizerConfig
 from nerfstudio.configs.base_config import ViewerConfig
 from nerfstudio.configs.external_methods import ExternalMethodDummyTrainerConfig, get_external_methods
@@ -83,6 +85,9 @@ descriptions = {
     "splatfacto": "Gaussian Splatting model",
     "splatfacto-big": "Larger version of Splatfacto with higher quality.",
 }
+
+method_configs["gs-distill"] = gs_distill_method.config
+descriptions["gs-distill"] = gs_distill_method.description
 
 method_configs["nerfacto"] = TrainerConfig(
     method_name="nerfacto",
