@@ -15,14 +15,16 @@ Instead of modifying the underlying models, the core engineering in this phase f
 
 ## 📊 Results
 
+
 The model successfully converged quantitatively, achieving a **PSNR > 25**. However, the qualitative visual results suffered from noticeable blurriness and lacked high-frequency geometric details.
 
 <p align="center">
-  <img src="[你的图片链接1：例如训练曲线或PSNR指标图]" alt="Training Metrics" width="30%">
-  <img src="[你的图片链接2：NeRF渲染出的模糊视图]" alt="Blurry Novel View" width="30%">
-  <img src="[你的图片链接3：3DGS真值视角的对比图]" alt="3DGS Ground Truth Comparison" width="30%">
-  <br>
-  <em>Fig 1. Quantitative success (PSNR > 25) vs. Qualitative blurriness in reconstructed geometry.</em>
+  <img src="https://github.com/user-attachments/assets/a97ae01a-cf50-4afb-8260-03a058f6f0f4" alt="NeRF Student (Blurry View)" width="48%" style="border-radius: 5px;">
+  &nbsp;
+  <img src="https://github.com/user-attachments/assets/6c0f544c-3583-412e-b5ba-354f702c74f6" alt="3DGS Teacher (Ground Truth)" width="48%" style="border-radius: 5px;">
+</p>
+<p align="center">
+  <em>Fig 1. Qualitative comparison: The NeRF student (left) exhibits geometric blurriness compared to the sharp 3DGS teacher (right) due to single-view ray sampling constraints.</em>
 </p>
 
 ## 🛑 The Engineering Bottleneck: Why the Blur?
