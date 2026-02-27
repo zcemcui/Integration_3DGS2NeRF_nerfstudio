@@ -15,17 +15,21 @@ Instead of modifying the underlying models, the core engineering in this phase f
 
 ## 📊 Results
 
-
 The model successfully converged quantitatively, achieving a **PSNR > 25**. However, the qualitative visual results suffered from noticeable blurriness and lacked high-frequency geometric details.
 
-<p align="center">
-  <img src="https://github.com/user-attachments/assets/a97ae01a-cf50-4afb-8260-03a058f6f0f4" alt="NeRF Student (Blurry View)" width="48%" style="border-radius: 5px;">
-  &nbsp;
-  <img src="https://github.com/user-attachments/assets/6c0f544c-3583-412e-b5ba-354f702c74f6" alt="3DGS Teacher (Ground Truth)" width="48%" style="border-radius: 5px;">
-</p>
-<p align="center">
-  <em>Fig 1. Qualitative comparison: The NeRF student (left) exhibits geometric blurriness compared to the sharp 3DGS teacher (right) due to single-view ray sampling constraints.</em>
-</p>
+<div align="center">
+  <table>
+    <tr>
+      <td align="center"><b>NeRF Student (Predicted)</b></td>
+      <td align="center"><b>3DGS Teacher (Ground Truth)</b></td>
+    </tr>
+    <tr>
+      <td width="50%"><img src="https://github.com/user-attachments/assets/a97ae01a-cf50-4afb-8260-03a058f6f0f4" alt="NeRF Student"></td>
+      <td width="50%"><img src="https://github.com/user-attachments/assets/6c0f544c-3583-412e-b5ba-354f702c74f6" alt="3DGS Teacher"></td>
+    </tr>
+  </table>
+  <p><em>Fig 1. Qualitative comparison: The NeRF student (left) exhibits geometric blurriness compared to the sharp 3DGS teacher (right) due to single-view ray sampling constraints.</em></p>
+</div>
 
 ## 🛑 The Engineering Bottleneck: Why the Blur?
 
